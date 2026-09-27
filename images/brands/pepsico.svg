@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="48" fill="#004B93"/>
+  <clipPath id="circleClip">
+    <circle cx="50" cy="50" r="46"/>
+  </clipPath>
+  <g clip-path="url(#circleClip)">
+    <!-- Top red hemisphere -->
+    <path d="M4 50 C16 50 28 34 50 34 C72 34 84 50 96 50 A46 46 0 0 0 4 50 Z" fill="#C9002B"/>
+    <!-- Middle white wave -->
+    <path d="M4 50 C16 50 28 34 50 34 C72 34 84 50 96 50 C84 62 70 66 50 66 C30 66 16 62 4 50 Z" fill="#FFFFFF"/>
+    <!-- Bottom blue hemisphere -->
+    <path d="M4 50 C16 62 30 66 50 66 C70 66 84 62 96 50 A46 46 0 0 1 4 50 Z" fill="#004B93"/>
+  </g>
+</svg>

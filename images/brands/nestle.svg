@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="48" fill="#FFFFFF"/>
+  <!-- Nest and Branch -->
+  <path d="M22 52 C30 52 40 58 50 58 C60 58 70 52 78 52 C72 64 58 68 50 68 C42 68 28 64 22 52 Z" fill="#005DAA"/>
+  <!-- Mother Bird -->
+  <path d="M36 44 C34 40 38 34 44 34 C48 34 50 38 48 42 C54 40 60 42 64 48 C56 50 48 50 40 48 Z" fill="#005DAA"/>
+  <!-- 2 Chicks -->
+  <circle cx="55" cy="46" r="3" fill="#005DAA"/>
+  <circle cx="63" cy="47" r="2.5" fill="#005DAA"/>
+  <!-- Nestlé Typography -->
+  <text x="50" y="82" font-family="'Outfit', 'Inter', sans-serif" font-size="15" font-weight="800" fill="#005DAA" text-anchor="middle" letter-spacing="0.5">Nestlé</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="46" fill="#E0F2FE"/>
+  <!-- Red Cola Bottle -->
+  <g transform="translate(32, 22)">
+    <!-- Cap -->
+    <rect x="7" y="0" width="8" height="5" rx="1" fill="#DC2626"/>
+    <path d="M9 5 L9 12 L4 22 L4 56 C4 59 7 60 11 60 C15 60 18 59 18 56 L18 22 L13 12 L13 5 Z" fill="#991B1B"/>
+    <!-- Red label -->
+    <rect x="4" y="28" width="14" height="18" fill="#DC2626"/>
+    <path d="M6 37 C9 35 13 39 16 36" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <!-- Orange Drink Bottle (Fanta/Mirinda) -->
+  <g transform="translate(50, 26)">
+    <rect x="7" y="0" width="8" height="5" rx="1" fill="#EA580C"/>
+    <path d="M9 5 L9 12 L4 20 L4 52 C4 55 7 56 11 56 C15 56 18 55 18 52 L18 20 L13 12 L13 5 Z" fill="#F97316"/>
+    <!-- Orange label -->
+    <rect x="4" y="24" width="14" height="16" fill="#EA580C"/>
+    <circle cx="11" cy="32" r="4" fill="#FDE047"/>
+  </g>
+</svg>

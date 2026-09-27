@@ -1,0 +1,10 @@
+# Markdown audit and documentation files
+*.md
+final_audit.md
+FINAL_AUDIT_REPORT.md
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

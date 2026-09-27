@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feri - Fresh Groceries & FMCG Brands Delivered in 10-15 Mins</title>
+  <meta name="description" content="Order 100% authentic FMCG groceries, dairy, snacks & household staples from your local kirana with 10-15 minute doorstep delivery.">
+  <meta name="theme-color" content="#0052FF">
+  <link rel="icon" type="image/svg+xml" href="images/ui/feri_logo.svg">
+
+  <!-- fonts & icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- top switcher bar -->
+  <div class="top-utility-bar">
+    <div class="utility-notice">
+      <span class="utility-tag"><i class="fas fa-bolt"></i> Quick Commerce</span>
+      <span>10-15 Min Kirana Delivery • 100% Authentic Brands</span>
+    </div>
+    <div class="utility-actions">
+      <div class="view-mode-toggle" role="group" aria-label="Device view switcher">
+        <button class="view-mode-btn active" id="btnModeResponsive" onclick="App.switchViewMode('responsive')" title="View adaptive full-width desktop layout">
+          <i class="fas fa-desktop"></i> Full Desktop
+        </button>
+        <button class="view-mode-btn" id="btnModeMobile" onclick="App.switchViewMode('mobile-frame')" title="Preview 390px mobile phone layout">
+          <i class="fas fa-mobile-alt"></i> Mobile (390px)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-wrapper mode-responsive" id="appWrapper">
+
+    <header class="site-header" role="banner">
+      <!-- simulated phone status bar -->
+      <div class="mobile-device-status-bar" id="mobileStatusBar" aria-hidden="true">
+        <span class="status-time">9:41</span>
+        <div class="status-notch-pill"></div>
+        <div class="status-icons">
+          <i class="fas fa-signal"></i>
+          <i class="fas fa-wifi"></i>
+          <i class="fas fa-battery-full"></i>
+        </div>
+      </div>
+
+      <div class="header-main">
+        <div class="header-left">
+          <button class="hamburger-btn" id="menuToggleBtn" onclick="App.openNavDrawer()" aria-label="Open Navigation Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+          <a href="javascript:void(0)" class="brand-link" onclick="App.resetFilters()" aria-label="Feri Home">
+            <img src="images/ui/feri_logo.svg" alt="Feri" class="brand-logo-img">
+          </a>
+          <!-- store & delivery location -->
+          <button class="delivery-context-pill" onclick="App.openStoreSelectorModal()" aria-label="Change delivery location and store">
+            <div class="store-avatar-circle">
+              <i class="fas fa-store"></i>
+            </div>
+            <div class="delivery-pill-info">
+              <div class="delivery-eta-badge">
+                <i class="fas fa-bolt"></i> 10-15 MINS
+              </div>
+              <div class="delivery-location-text" id="deliveryLocationText">Home: New Delhi</div>
+              <span class="store-subtext" id="deliveryStoreSubtext">New Shree Kirana • 0.8 km</span>
+            </div>
+            <i class="fas fa-chevron-down context-chevron"></i>
+          </button>
+        </div>
+
+        <!-- desktop search -->
+        <div class="header-search header-search-desktop">
+          <div class="search-input-wrapper">
+            <i class="fas fa-search search-icon-lens"></i>
+            <input type="text" id="headerSearchInput" class="search-input-field" placeholder="Search Atta, Milk, Dal, Coca-Cola, Lay's..." oninput="App.handleSearchInput(this.value)" aria-label="Search grocery products">
+            <button class="search-btn-barcode" onclick="App.openBarcodeModal()" aria-label="Barcode Search" title="Scan FMCG pack barcode">
+              <i class="fas fa-barcode"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <button class="header-icon-btn notification-bell-btn" onclick="App.openNotificationsModal()" aria-label="Notifications" title="View order updates and deals">
+            <i class="fas fa-bell"></i>
+            <span class="header-badge" id="notificationBadge">3</span>
+          </button>
+
+          <button class="credit-chip-btn" onclick="App.openCreditModal()" title="View Kirana Pay Later Balance">
+            <i class="fas fa-wallet"></i>
+            <span>Credit: <strong id="creditChipBalance">₹3,750</strong></span>
+          </button>
+
+          <button class="header-icon-btn header-wishlist-btn" onclick="App.openWishlistModal()" aria-label="Wishlist" title="View saved items">
+            <i class="far fa-heart"></i>
+            <span class="header-badge" id="wishlistBadge" style="display:none;">0</span>
+          </button>
+
+          <button class="cart-button-desktop" onclick="App.openCartDrawer()" aria-label="Shopping Cart">
+            <i class="fas fa-shopping-bag"></i>
+            <span><strong id="desktopCartCount">2</strong> Items</span>
+            <span class="cart-btn-subtotal" id="desktopCartSubtotal">₹414</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- mobile search -->
+      <div class="header-search-mobile">
+        <div class="search-input-wrapper">
+          <i class="fas fa-search search-icon-lens"></i>
+          <input type="text" id="mobileSearchInput" class="search-input-field" placeholder="Search Atta, Milk, Dal, Coca-Cola, Lay's..." oninput="App.handleSearchInput(this.value)" aria-label="Search grocery products">
+          <button class="search-btn-barcode" onclick="App.openBarcodeModal()" aria-label="Barcode Search" title="Scan FMCG pack barcode">
+            <i class="fas fa-barcode"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- category pills -->
+      <nav class="desktop-category-bar" aria-label="Category navigation">
+        <div class="desktop-category-inner" id="desktopCategoryInner">
+          <a href="javascript:void(0)" class="desktop-cat-link desktop-category-pill active" onclick="App.filterCategory('all')" title="All Categories" aria-label="All Categories">
+            <i class="fas fa-th-large desktop-cat-icon" aria-hidden="true"></i>
+            <span class="desktop-cat-text">All Categories</span>
+          </a>
+          <a href="javascript:void(0)" class="desktop-cat-link desktop-category-pill" onclick="App.filterCategory('Groceries &amp; Staples')" title="Groceries &amp; Staples" aria-label="Groceries &amp; Staples">
+            <i class="fas fa-basket-shopping desktop-cat-icon" aria-hidden="true"></i>
+            <span class="desktop-cat-text">Groceries &amp; Staples</span>
+          </a>
+          <a href="javascript:void(0)" class="desktop-cat-link desktop-category-pill" onclick="App.filterCategory('Dairy &amp; Breakfast')" title="Dairy &amp; Breakfast" aria-label="Dairy &amp; Breakfast">
+            <i class="fas fa-egg desktop-cat-icon" aria-hidden="true"></i>
+            <span class="desktop-cat-text">Dairy &amp; Breakfast</span>
+          </a>
+          <a href="javascript:void(0)" class="desktop-cat-link desktop-category-pill" onclick="App.filterCategory('Snacks &amp; Munchies')" title="Snacks &amp; Munchies" aria-label="Snacks &amp; Munchies">
+            <i class="fas fa-cookie-bite desktop-cat-icon" aria-hidden="true"></i>
+            <span class="desktop-cat-text">Snacks &amp; Munchies</span>
+          </a>
+          <a href="javascript:void(0)" class="desktop-cat-link desktop-category-pill" onclick="App.filterCategory('Beverages &amp; Drinks')" title="Beverages &amp; Drinks" aria-label="Beverages &amp; Drinks">
+            <i class="fas fa-bottle-water desktop-cat-icon" aria-hidden="true"></i>
+            <span class="desktop-cat-text">Beverages &amp; Drinks</span>
+          </a>
+          <a href="javascript:void(0)" class="desktop-cat-link desktop-category-pill" onclick="App.filterCategory('Biscuits &amp; Cookies')" title="Biscuits &amp; Cookies" aria-label="Biscuits &amp; Cookies">
+            <i class="fas fa-cookie desktop-cat-icon" aria-hidden="true"></i>
+            <span class="desktop-cat-text">Biscuits &amp; Cookies</span>
+          </a>
+          <a href="javascript:void(0)" class="desktop-cat-link desktop-category-pill" onclick="App.filterCategory('Personal Care')" title="Personal Care" aria-label="Personal Care">
+            <i class="fas fa-pump-soap desktop-cat-icon" aria-hidden="true"></i>
+            <span class="desktop-cat-text">Personal Care</span>
+          </a>
+          <a href="javascript:void(0)" class="desktop-cat-link desktop-category-pill" onclick="App.filterCategory('Cleaning &amp; Home')" title="Cleaning &amp; Home" aria-label="Cleaning &amp; Home">
+            <i class="fas fa-spray-can-sparkles desktop-cat-icon" aria-hidden="true"></i>
+            <span class="desktop-cat-text">Cleaning &amp; Home</span>
+          </a>
+          <a href="javascript:void(0)" class="desktop-cat-link desktop-category-pill" onclick="App.filterCategory('Pooja Essentials')" title="Pooja Essentials" aria-label="Pooja Essentials">
+            <i class="fas fa-om desktop-cat-icon" aria-hidden="true"></i>
+            <span class="desktop-cat-text">Pooja Essentials</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main-content" id="mainContent" role="main">
+
+      <!-- hero promo banner -->
+      <section class="ui-section" aria-label="Promotions">
+        <div class="hero-carousel-wrap" id="heroCarouselWrap">
+        </div>
+      </section>
+
+      <!-- kirana pay later banner -->
+      <section class="ui-section" aria-label="Payment Perks">
+        <div class="kirana-credit-strip">
+          <div class="credit-strip-left">
+            <div class="credit-icon-wrap">
+              <i class="fas fa-receipt"></i>
+            </div>
+            <div>
+              <div class="credit-info-title">Kirana Pay Later - Instant 15-Day Interest-Free Credit</div>
+              <div class="credit-info-sub">Partnered with FairPaisa Finance Ltd (RBI Reg. NBFC) • Zero upfront fees</div>
+            </div>
+          </div>
+          <div class="credit-strip-right">
+            <span class="credit-pill-balance" id="creditStripBalance">₹3,750 Available</span>
+            <button class="hero-cta-btn" style="padding: 4px 10px; font-size: 0.75rem;" onclick="App.openCreditModal()">
+              Details <i class="fas fa-chevron-right text-xs"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- categories -->
+      <section class="ui-section" id="categorySection" aria-labelledby="catSectionHeading">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title" id="catSectionHeading">Shop by Category</h2>
+            <div class="section-subtitle">Everyday essentials curated across 8 core grocery departments</div>
+          </div>
+          <a href="javascript:void(0)" class="section-link" onclick="App.resetFilters()">
+            View All <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+        <div class="category-grid-4" id="categoryGrid">
+        </div>
+      </section>
+
+      <!-- brand carousel -->
+      <section class="ui-section" id="brandSection" aria-labelledby="brandSectionHeading">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title" id="brandSectionHeading">Shop by Brand</h2>
+            <div class="section-subtitle">100% Genuine packaged products from India's trusted FMCG giants</div>
+          </div>
+          <div class="brand-section-actions">
+            <button class="brand-nav-btn desktop-only" onclick="App.scrollBrands('left')" aria-label="Previous brands"><i class="fas fa-chevron-left"></i></button>
+            <button class="brand-nav-btn desktop-only" onclick="App.scrollBrands('right')" aria-label="Next brands"><i class="fas fa-chevron-right"></i></button>
+            <a href="javascript:void(0)" class="section-link" onclick="App.resetFilters()">
+              All Brands <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="brand-carousel-wrapper">
+          <div class="brand-carousel-track" id="brandCarouselTrack">
+          </div>
+        </div>
+      </section>
+
+      <!-- quality guarantee -->
+      <section class="ui-section" aria-label="Freshness Guarantee">
+        <div class="guarantee-banner">
+          <div class="guarantee-content">
+            <div class="guarantee-title">
+              <i class="fas fa-shield-halved"></i> 100% Quality & Freshness Guarantee
+            </div>
+            <p class="guarantee-desc">
+              If any grocery, dairy, or packaged FMCG item does not meet your standard, hand it back at delivery or request an instant doorstep replacement.
+            </p>
+            <div class="guarantee-features">
+              <span class="guarantee-chip"><i class="fas fa-shield-alt"></i> FSSAI Certified Storage</span>
+              <span class="guarantee-chip"><i class="fas fa-temperature-low"></i> Cold-Chain Maintained</span>
+              <span class="guarantee-chip"><i class="fas fa-undo"></i> Instant Doorstep Refund</span>
+            </div>
+          </div>
+          <div class="guarantee-shield-icon">
+            <i class="fas fa-shield-heart"></i>
+          </div>
+        </div>
+      </section>
+
+      <!-- repeat last order -->
+      <section class="ui-section" aria-labelledby="repeatOrderHeading">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title" id="repeatOrderHeading">Repeat Last Order</h2>
+            <span style="font-size: 0.75rem; color: var(--clr-green); font-weight: 700;">Delivered 2 days ago</span>
+          </div>
+          <a href="javascript:void(0)" class="section-link" onclick="App.openOrdersModal()">
+            View All Orders <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+        <div class="repeat-order-card">
+          <div class="repeat-top-row">
+            <div class="repeat-order-info">
+              <span class="repeat-order-num">Order #ORD-882194</span>
+              <span class="repeat-order-meta">3 Items • ₹494 • Paid via UPI</span>
+            </div>
+            <button class="repeat-order-again-btn" onclick="App.repeatLastOrder()" aria-label="Repeat this order">
+              <i class="fas fa-redo-alt"></i> Order Again
+            </button>
+          </div>
+          <div class="repeat-thumbs-row">
+            <div class="repeat-thumb-item" title="Fortune Refined Oil"><img src="images/products/p86.jpg" alt="Fortune Oil"></div>
+            <div class="repeat-thumb-item" title="Aashirvaad Atta"><img src="images/products/p54.jpg" alt="Aashirvaad Atta"></div>
+            <div class="repeat-thumb-item" title="Britannia Good Day"><img src="images/products/p6.jpg" alt="Good Day Cookies"></div>
+            <div class="repeat-more-badge">+2</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- product grid -->
+      <section class="ui-section" id="productsSection" aria-labelledby="productSectionTitle">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title" id="productSectionTitle">Best Deals & Daily Essentials</h2>
+            <div class="section-subtitle">Prices include all taxes • Unit Sale Price (USP) as per Legal Metrology</div>
+          </div>
+          <button id="resetFiltersBtn" class="hero-cta-btn" style="padding: 4px 10px; font-size: 0.75rem; display:none;" onclick="App.resetFilters()">
+            <i class="fas fa-times"></i> Clear Filter
+          </button>
+        </div>
+        <div class="product-grid" id="productGrid">
+        </div>
+      </section>
+
+      <!-- trust badges -->
+      <section class="ui-section" aria-label="Platform Trust">
+        <div class="trust-strip">
+          <div class="trust-badge-item">
+            <i class="fas fa-truck-fast trust-badge-icon"></i>
+            <span class="trust-badge-label">Free Delivery</span>
+            <span class="trust-badge-sub">On orders above ₹199</span>
+          </div>
+          <div class="trust-badge-item">
+            <i class="fas fa-stopwatch trust-badge-icon"></i>
+            <span class="trust-badge-label">10-15 Min ETA</span>
+            <span class="trust-badge-sub">Direct from local darkstore</span>
+          </div>
+          <div class="trust-badge-item">
+            <i class="fas fa-certificate trust-badge-icon"></i>
+            <span class="trust-badge-label">100% Genuine</span>
+            <span class="trust-badge-sub">Direct FMCG distribution</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-inner">
+        <div class="footer-top-grid">
+          <div class="footer-col">
+            <h4>Feri Retail Technologies Pvt. Ltd.</h4>
+            <p style="margin-bottom: 8px;">India's neighborhood quick commerce network connecting verified Kirana merchants directly with consumers.</p>
+            <div class="compliance-badge-row">
+              <span class="fssai-pill"><i class="fas fa-shield-halved"></i> FSSAI: 10021011000456</span>
+              <span class="fssai-pill">CIN: U52100DL2024PTC123456</span>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Consumer Care & Grievance</h4>
+            <ul>
+              <li><strong>Grievance Officer:</strong> Rajesh V. Kumar</li>
+              <li><strong>Email:</strong> grievance@feri.in</li>
+              <li><strong>Helpline:</strong> 1800-202-3374 (9 AM - 9 PM)</li>
+              <li><strong>Registered Office:</strong> 4th Floor, Tech Hub, South Extension, New Delhi - 110049</li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Regulatory Disclosures</h4>
+            <ul>
+              <li><i class="fas fa-check-circle" style="color:var(--clr-green);"></i> Consumer Protection (E-Commerce) Rules, 2020</li>
+              <li><i class="fas fa-check-circle" style="color:var(--clr-green);"></i> Legal Metrology (Packaged Commodities) Compliant</li>
+              <li><i class="fas fa-check-circle" style="color:var(--clr-green);"></i> Lending Partner: FairPaisa Finance Ltd (RBI Reg. NBFC-ND)</li>
+              <li><i class="fas fa-check-circle" style="color:var(--clr-green);"></i> 100% DPDP Act, 2023 Data Privacy Protected</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom-bar">
+          <div>© 2026 Feri Retail Technologies Pvt. Ltd. All rights reserved.</div>
+          <div>Quick grocery delivery demo</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- mobile bottom nav -->
+    <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+      <div class="mobile-bottom-nav-inner">
+        <button class="bnav-tab active" id="bnavTabHome" onclick="App.resetFilters(); window.scrollTo({top:0, behavior:'smooth'});">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </button>
+        <button class="bnav-tab" id="bnavTabCategories" onclick="App.scrollToCategories();">
+          <i class="fas fa-th-large"></i>
+          <span>Categories</span>
+        </button>
+        <button class="bnav-tab" id="bnavTabCart" onclick="App.openCartDrawer()">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="bnav-cart-badge" id="bnavCartBadge">2</span>
+          <span>Cart</span>
+        </button>
+        <button class="bnav-tab" id="bnavTabOrders" onclick="App.openOrdersModal()">
+          <i class="fas fa-receipt"></i>
+          <span>Orders</span>
+        </button>
+        <button class="bnav-tab" id="bnavTabAccount" onclick="App.openNavDrawer()">
+          <i class="fas fa-user"></i>
+          <span>Account</span>
+        </button>
+      </div>
+      <div class="mobile-home-indicator" aria-hidden="true"></div>
+    </nav>
+
+  </div>
+
+  <!-- close modal if clicking outside -->
+  <div class="drawer-backdrop" id="drawerBackdrop" onclick="App.closeAllDrawers()"></div>
+
+  <!-- cart drawer -->
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart Drawer">
+    <div class="drawer-header">
+      <div class="drawer-title">
+        <i class="fas fa-shopping-bag" style="color:var(--clr-green);"></i>
+        <span>My Shopping Bag</span>
+      </div>
+      <button class="drawer-close-btn" onclick="App.closeAllDrawers()" aria-label="Close cart">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="drawer-body" id="cartDrawerBody">
+    </div>
+    <div class="drawer-footer" id="cartDrawerFooter">
+    </div>
+  </aside>
+
+  <!-- side nav drawer -->
+  <aside class="nav-drawer" id="navDrawer" aria-label="Main Navigation Menu">
+    <div class="nav-drawer-profile">
+      <div class="nav-user-row">
+        <div class="nav-user-avatar">
+          <i class="fas fa-user-circle"></i>
+        </div>
+        <div>
+          <div class="nav-user-name" id="drawerUserName">Demo User</div>
+          <div class="nav-user-phone">+91 98765 43210 • Green Park</div>
+        </div>
+      </div>
+    </div>
+    <ul class="nav-menu-list">
+      <li class="nav-menu-item">
+        <a href="javascript:void(0)" onclick="App.closeAllDrawers(); App.resetFilters();">
+          <i class="fas fa-home"></i> Home
+        </a>
+      </li>
+      <li class="nav-menu-item">
+        <a href="javascript:void(0)" onclick="App.closeAllDrawers(); App.openStoreSelectorModal();">
+          <i class="fas fa-store"></i> Select Kirana Store
+        </a>
+      </li>
+      <li class="nav-menu-item">
+        <a href="javascript:void(0)" onclick="App.closeAllDrawers(); App.openCreditModal();">
+          <i class="fas fa-credit-card"></i> Kirana Pay Later
+        </a>
+      </li>
+      <li class="nav-menu-item">
+        <a href="javascript:void(0)" onclick="App.closeAllDrawers(); App.openOrdersModal();">
+          <i class="fas fa-history"></i> Past Orders & Tracking
+        </a>
+      </li>
+      <li class="nav-menu-item">
+        <a href="javascript:void(0)" onclick="App.closeAllDrawers(); App.openWishlistModal();">
+          <i class="fas fa-heart"></i> My Wishlist
+        </a>
+      </li>
+      <li class="nav-menu-item">
+        <a href="javascript:void(0)" onclick="App.closeAllDrawers(); App.openBarcodeModal();">
+          <i class="fas fa-barcode"></i> Barcode Scanner
+        </a>
+      </li>
+      <li class="nav-menu-item">
+        <a href="javascript:void(0)" onclick="App.closeAllDrawers(); App.openNotificationsModal();">
+          <i class="fas fa-bell"></i> Notifications & Deals
+        </a>
+      </li>
+      <li class="nav-menu-item">
+        <a href="javascript:void(0)" onclick="App.closeAllDrawers(); App.showToast('Language: English (India)', 'info');">
+          <i class="fas fa-language"></i> Language: English (हिंदी soon)
+        </a>
+      </li>
+      <li class="nav-menu-item">
+        <a href="javascript:void(0)" onclick="App.closeAllDrawers(); App.showToast('Connecting to Helpline: 1800-202-3374', 'info');">
+          <i class="fas fa-headset"></i> Customer Care: 1800-202-3374
+        </a>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- dialog modal -->
+  <div class="center-modal" id="centerModal" role="dialog" aria-modal="true">
+  </div>
+
+  <!-- toast messages -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

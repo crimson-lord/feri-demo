@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" fill="none">
+  <circle cx="30" cy="30" r="30" fill="#FEF3C7"/>
+  <rect x="12" y="24" width="36" height="26" rx="2" fill="#D97706"/>
+  <!-- Canopy stripes -->
+  <path d="M10 24 L14 16 L20 24 L26 16 L32 24 L38 16 L44 24 L50 16 L50 24 Z" fill="#DC2626"/>
+  <path d="M14 16 L20 24 L26 16 L32 24 L38 16 L44 24 L50 16" fill="#FBBF24"/>
+  <!-- Door and shelves -->
+  <rect x="22" y="32" width="16" height="18" fill="#F8FAFC"/>
+  <rect x="26" y="32" width="8" height="18" fill="#3B82F6"/>
+  <rect x="14" y="34" width="6" height="12" fill="#F59E0B"/>
+  <rect x="40" y="34" width="6" height="12" fill="#10B981"/>
+</svg>

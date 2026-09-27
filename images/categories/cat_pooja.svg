@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="46" fill="#FFF7ED"/>
+  <!-- Agarbatti pack & sticks -->
+  <g transform="translate(48, 22)">
+    <line x1="2" y1="2" x2="20" y2="40" stroke="#78350F" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="8" y1="0" x2="24" y2="40" stroke="#78350F" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="14" y1="4" x2="28" y2="40" stroke="#78350F" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- Glowing orange tips -->
+    <circle cx="2" cy="2" r="1.5" fill="#EF4444"/>
+    <circle cx="8" cy="0" r="1.5" fill="#EF4444"/>
+    <circle cx="14" cy="4" r="1.5" fill="#EF4444"/>
+  </g>
+  <!-- Brass Diya / Oil lamp -->
+  <g transform="translate(26, 40)">
+    <!-- Oil lamp base -->
+    <path d="M4 22 C4 28 14 32 24 32 C34 32 44 28 44 22 L38 20 C32 22 16 22 10 20 Z" fill="#D97706"/>
+    <ellipse cx="24" cy="20" rx="16" ry="4" fill="#F59E0B"/>
+    <rect x="22" y="32" width="4" height="6" fill="#B45309"/>
+    <ellipse cx="24" cy="38" rx="8" ry="3" fill="#D97706"/>
+    <!-- Golden Flame -->
+    <path d="M24 6 C28 12 28 18 24 20 C20 18 20 12 24 6 Z" fill="#FACC15"/>
+    <path d="M24 10 C26 13 26 17 24 18 C22 17 22 13 24 10 Z" fill="#EA580C"/>
+  </g>
+</svg>

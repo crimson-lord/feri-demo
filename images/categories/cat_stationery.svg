@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="46" fill="#E0F7FA"/>
+  <!-- Pencils protruding -->
+  <g transform="translate(32, 18)">
+    <!-- Blue pencil -->
+    <path d="M6 16 L10 0 L14 16 Z" fill="#FDE047"/>
+    <polygon points="10,0 8,8 12,8" fill="#1E293B"/>
+    <rect x="6" y="16" width="8" height="26" fill="#2563EB"/>
+    <!-- Red pencil -->
+    <path d="M18 12 L22 -4 L26 12 Z" fill="#FDE047"/>
+    <polygon points="22,-4 20,4 24,4" fill="#1E293B"/>
+    <rect x="18" y="12" width="8" height="30" fill="#DC2626"/>
+    <!-- Green pencil -->
+    <path d="M28 18 L31 4 L35 18 Z" fill="#FDE047"/>
+    <polygon points="31,4 29,10 33,10" fill="#1E293B"/>
+    <rect x="28" y="18" width="7" height="24" fill="#16A34A"/>
+    <!-- Yellow Ruler -->
+    <rect x="1" y="8" width="5" height="34" fill="#EAB308" transform="rotate(-15 1 8)"/>
+  </g>
+  <!-- Holder Cup -->
+  <g transform="translate(35, 46)">
+    <path d="M2 0 L6 32 H24 L28 0 Z" fill="#0284C7"/>
+    <ellipse cx="15" cy="0" rx="13" ry="3" fill="#38BDF8"/>
+  </g>
+</svg>

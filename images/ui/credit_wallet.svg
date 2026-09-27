@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" fill="none">
+  <defs>
+    <linearGradient id="walletBg" x1="10" y1="20" x2="80" y2="90" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="walletFlap" x1="10" y1="20" x2="80" y2="50" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="goldCoin1" x1="45" y1="0" x2="75" y2="35" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FDE047"/>
+      <stop offset="1" stop-color="#EAB308"/>
+    </linearGradient>
+    <linearGradient id="goldCoin2" x1="70" y1="40" x2="100" y2="75" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FDE047"/>
+      <stop offset="1" stop-color="#CA8A04"/>
+    </linearGradient>
+    <filter id="dropSh" x="0" y="0" width="120" height="100" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#1E3A8A" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Top Floating Gold Coin -->
+  <g transform="translate(0, -2)">
+    <ellipse cx="60" cy="22" rx="14" ry="14" fill="url(#goldCoin1)"/>
+    <ellipse cx="60" cy="22" rx="11" ry="11" fill="#FACC15" stroke="#EAB308" stroke-width="1.5"/>
+    <text x="56" y="27" font-family="'Inter', sans-serif" font-size="14" font-weight="800" fill="#854D0E">₹</text>
+  </g>
+
+  <!-- Main 3D Blue Wallet Body -->
+  <g filter="url(#dropSh)">
+    <rect x="15" y="32" width="75" height="52" rx="12" fill="url(#walletBg)"/>
+    <!-- Wallet Flap -->
+    <path d="M15 38C15 34.6863 17.6863 32 21 32H84C87.3137 32 90 34.6863 90 38V48C90 54.6274 84.6274 60 78 60H15V38Z" fill="url(#walletFlap)"/>
+    <!-- Silver/Gold Snap Clasp -->
+    <circle cx="78" cy="48" r="4.5" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5"/>
+    <circle cx="78" cy="48" r="2" fill="#E2E8F0"/>
+  </g>
+
+  <!-- Bottom Front Floating Gold Coin -->
+  <g transform="translate(14, 28)">
+    <ellipse cx="74" cy="48" rx="15" ry="15" fill="url(#goldCoin2)"/>
+    <ellipse cx="74" cy="48" rx="12" ry="12" fill="#FDE047" stroke="#CA8A04" stroke-width="1.5"/>
+    <text x="69.5" y="53.5" font-family="'Inter', sans-serif" font-size="15" font-weight="800" fill="#78350F">₹</text>
+  </g>
+</svg>

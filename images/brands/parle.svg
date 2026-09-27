@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="48" fill="#FFFFFF"/>
+  <rect x="10" y="26" width="80" height="48" rx="24" fill="#D32F2F" stroke="#F59E0B" stroke-width="2"/>
+  <text x="50" y="58" font-family="'Outfit', 'Inter', sans-serif" font-size="20" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">PARLE</text>
+</svg>

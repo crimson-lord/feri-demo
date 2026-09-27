@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="46" fill="#EFF6FF"/>
+  <!-- Dove style elegant white bottle -->
+  <g transform="translate(36, 18)">
+    <!-- Blue Cap -->
+    <path d="M10 0 C10 0 14 0 18 0 C20 0 20 5 20 5 H8 C8 5 8 0 10 0 Z" fill="#2563EB"/>
+    <!-- Bottle Shape -->
+    <path d="M8 6 H20 L24 20 C27 34 27 48 23 58 C21 62 17 64 14 64 C11 64 7 62 5 58 C1 48 1 34 4 20 Z" fill="#FFFFFF" stroke="#DBEAFE" stroke-width="1.5"/>
+    <!-- Gold Bird Emblem -->
+    <path d="M14 22 C16 20 20 22 21 24 C19 25 17 24 14 26 C13 25 12 23 14 22 Z" fill="#D97706"/>
+    <!-- Blue Typography Wave -->
+    <path d="M7 36 C10 34 18 34 21 36" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="9" y1="42" x2="19" y2="42" stroke="#94A3B8" stroke-width="1"/>
+    <line x1="11" y1="46" x2="17" y2="46" stroke="#94A3B8" stroke-width="1"/>
+  </g>
+</svg>

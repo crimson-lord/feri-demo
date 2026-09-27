@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Soft pastel circle bg -->
+  <circle cx="50" cy="50" r="46" fill="#FEF3C7"/>
+  <!-- Veggies peaking out -->
+  <!-- Green leafy celery/lettuce -->
+  <path d="M36 40 C32 28 40 22 46 28 C48 24 56 26 56 34" fill="#22C55E"/>
+  <path d="M40 38 C42 26 52 24 54 32" fill="#16A34A"/>
+  <!-- Orange Carrots -->
+  <path d="M50 36 L58 20 L63 24 L56 38 Z" fill="#F97316"/>
+  <path d="M57 20 L58 14 M60 21 L63 15 M62 23 L66 18" stroke="#22C55E" stroke-width="2" stroke-linecap="round"/>
+  <!-- Red Tomato -->
+  <circle cx="64" cy="40" r="8" fill="#EF4444"/>
+  <path d="M64 32 L64 30 M62 31 L66 31" stroke="#15803D" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Brown Paper Grocery Bag -->
+  <path d="M30 42 L34 80 H66 L70 42 Z" fill="#D97706"/>
+  <path d="M30 42 L32 46 H68 L70 42 Z" fill="#B45309"/>
+  <!-- Bag fold lines -->
+  <path d="M50 46 V80" stroke="#B45309" stroke-width="1.5" stroke-dasharray="2 2"/>
+</svg>
